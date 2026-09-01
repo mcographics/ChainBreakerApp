@@ -1,3 +1,17 @@
+# ChainBreaker 0.0.3
+
+Android launcher icon refresh.
+
+## Changed
+
+- Replaced the default launcher artwork with the supplied `logo.png` across legacy, round, and adaptive Android icon resources.
+- Kept the existing cross-and-chain `splash.png` artwork unchanged.
+- Continued the independent Android update line with version code `3`.
+
+## Release
+
+This release is `0.0.3` and is published through the [ChainBreaker GitHub Releases](https://github.com/mcographics/ChainBreakerApp/releases) page.
+
 # ChainBreaker 0.0.2
 
 Settings and Android release updates.

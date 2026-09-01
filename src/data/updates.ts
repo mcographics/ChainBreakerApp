@@ -1,7 +1,7 @@
 import { Browser } from '@capacitor/browser';
 import { Capacitor } from '@capacitor/core';
 
-export const APP_VERSION = '0.0.2';
+export const APP_VERSION = '0.0.3';
 export const GITHUB_REPOSITORY = 'mcographics/ChainBreakerApp';
 export const GITHUB_RELEASES_API = `https://api.github.com/repos/${GITHUB_REPOSITORY}/releases?per_page=20`;
 export const GITHUB_RELEASES_PAGE = `https://github.com/${GITHUB_REPOSITORY}/releases`;
