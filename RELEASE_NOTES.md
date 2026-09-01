@@ -1,3 +1,17 @@
+# ChainBreaker 0.0.4
+
+Android startup fix.
+
+## Fixed
+
+- Fixed a React hook-order crash that caused the app to render a black screen when an existing local profile loaded after startup.
+- Kept the update check effect mounted consistently through loading, onboarding, and returning-user states.
+- Emitted relative production asset URLs for reliable Capacitor WebView loading.
+
+## Release
+
+This release is `0.0.4` and is published through the [ChainBreaker GitHub Releases](https://github.com/mcographics/ChainBreakerApp/releases) page.
+
 # ChainBreaker 0.0.3
 
 Android launcher icon refresh.

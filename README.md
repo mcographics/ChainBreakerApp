@@ -4,11 +4,11 @@ ChainBreaker is a local-first Android rule of life for men.
 
 > Break the chains. Build the man.
 
-Version `0.0.3` refreshes the Android launcher icon with the supplied ChainBreaker logo while retaining the private settings and GitHub release update path:
+Version `0.0.4` fixes the Android startup crash that could leave an existing local journey on a black screen, while retaining the supplied ChainBreaker launcher logo and GitHub release update path:
 
 **Pray -> Read -> Act -> Train -> Reflect -> Repeat**
 
-## Included in 0.0.3
+## Included in 0.0.4
 
 - Home daily operating screen with KJV verse, devotion, prayer, mission, workout, battle, and reading continuation.
 - Offline KJV Bible reader using bundled public-domain Scripture from the local `scripture` folder.
@@ -20,6 +20,8 @@ Version `0.0.3` refreshes the Android launcher icon with the supplied ChainBreak
 - SQLite persistence on Android with an in-memory repository for tests.
 - Settings screen opened from the top menu with Scripture preferences, Red Letter Mode, auto-update, update checks, and Android installer handoff.
 - Supplied `logo.png` used for the Android launcher and round launcher icon across density resources.
+- React hooks remain stable across loading, onboarding, and returning-user renders.
+- Capacitor production asset URLs are emitted relative to the local Android WebView origin.
 
 ## Privacy and scope
 

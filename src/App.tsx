@@ -46,6 +46,12 @@ export default function App() {
   }
   useEffect(() => { refresh().finally(() => setReady(true)); }, [repo]);
 
+  useEffect(() => {
+    if (!ready || !settings.autoUpdate || updateCheckInFlight.current) return;
+    const lastChecked = settings.lastUpdateCheckAt ? Date.parse(settings.lastUpdateCheckAt) : 0;
+    if (!lastChecked || Date.now() - lastChecked >= 86_400_000) void runUpdateCheck();
+  }, [ready, settings.autoUpdate]);
+
   if (!ready) return <div className="loading-screen"><img className="loading-splash" src="/brand/chainbreaker-splash.png" alt="ChainBreaker" /><p>Preparing your private journey...</p></div>;
   if (!profile) return <Onboarding repo={repo} onComplete={async () => { await refresh(); setScreen('home'); }} />;
 
@@ -72,12 +78,6 @@ export default function App() {
     try { await openUpdateInstaller(result.release.apkUrl); }
     catch (error) { setUpdateState({ phase: 'error', result, error: error instanceof Error ? error.message : 'Unable to open the Android installer.' }); }
   }
-  useEffect(() => {
-    if (!ready || !settings.autoUpdate || updateCheckInFlight.current) return;
-    const lastChecked = settings.lastUpdateCheckAt ? Date.parse(settings.lastUpdateCheckAt) : 0;
-    if (!lastChecked || Date.now() - lastChecked >= 86_400_000) void runUpdateCheck();
-  }, [ready, settings.autoUpdate]);
-
   return <div className="app-shell">
     <header className="topbar">
       <button className="wordmark" onClick={() => setScreen('home')} aria-label="Go to Home"><img className="wordmark-logo" src="/brand/chainbreaker-logo.png" alt="" /><span>CHAIN<span>BREAKER</span></span></button>
