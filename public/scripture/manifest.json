@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "King James Version",
+      "shortLabel": "KJV",
+      "file": "kjv.json",
+      "sourceFile": "kjv.docx",
+      "verseCount": 31102
+    },
+    {
+      "id": "akjv",
+      "label": "American King James Version",
+      "shortLabel": "AKJV",
+      "file": "akjv.json",
+      "sourceFile": "akjv.docx",
+      "verseCount": 31102
+    },
+    {
+      "id": "asv",
+      "label": "American Standard Version",
+      "shortLabel": "ASV",
+      "file": "asv.json",
+      "sourceFile": "asv.docx",
+      "verseCount": 31086
+    },
+    {
+      "id": "bib",
+      "label": "Berean Interlinear Bible",
+      "shortLabel": "BIB",
+      "file": "bib.json",
+      "sourceFile": "bib.docx",
+      "verseCount": 7834
+    },
+    {
+      "id": "blb",
+      "label": "Berean Literal Bible",
+      "shortLabel": "BLB",
+      "file": "blb.json",
+      "sourceFile": "blb.docx",
+      "verseCount": 7835
+    },
+    {
+      "id": "dbt",
+      "label": "Darby Bible Translation",
+      "shortLabel": "DBT",
+      "file": "dbt.json",
+      "sourceFile": "dbt.docx",
+      "verseCount": 31099
+    },
+    {
+      "id": "drb",
+      "label": "Douay-Rheims Bible",
+      "shortLabel": "DRB",
+      "file": "drb.json",
+      "sourceFile": "drb.docx",
+      "verseCount": 31093
+    },
+    {
+      "id": "erv",
+      "label": "English Revised Version",
+      "shortLabel": "ERV",
+      "file": "erv.json",
+      "sourceFile": "erv.docx",
+      "verseCount": 31086
+    },
+    {
+      "id": "jps",
+      "label": "JPS Tanakh / Weymouth New Testament",
+      "shortLabel": "JPS",
+      "file": "jps.json",
+      "sourceFile": "jps.docx",
+      "verseCount": 31064
+    },
+    {
+      "id": "slt",
+      "label": "Smith's Literal Translation",
+      "shortLabel": "SLT",
+      "file": "slt.json",
+      "sourceFile": "slt.docx",
+      "verseCount": 31101
+    },
+    {
+      "id": "wbt",
+      "label": "Webster's Bible Translation",
+      "shortLabel": "WBT",
+      "file": "wbt.json",
+      "sourceFile": "wbt.docx",
+      "verseCount": 31102
+    },
+    {
+      "id": "ylt",
+      "label": "Young's Literal Translation",
+      "shortLabel": "YLT",
+      "file": "ylt.json",
+      "sourceFile": "ylt.docx",
+      "verseCount": 31102
+    },
+    {
+      "id": "geneva1560",
+      "label": "Geneva Bible 1560",
+      "shortLabel": "GEN",
+      "file": "geneva1560.json",
+      "sourceFile": "geneva_bible1560_reader.json",
+      "verseCount": 30940
+    }
+  ]
+}
