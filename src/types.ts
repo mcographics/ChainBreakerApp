@@ -1,4 +1,4 @@
-export type Screen = 'home' | 'word' | 'brotherhood' | 'build' | 'journey' | 'battle';
+export type Screen = 'home' | 'word' | 'brotherhood' | 'build' | 'journey' | 'battle' | 'settings';
 
 export type Identity =
   | 'Man of God'
@@ -65,6 +65,13 @@ export type ReadingProgress = {
   updatedAt: string;
 };
 
+export type AppSettings = {
+  preferredTranslationId: string;
+  redLetterMode: boolean;
+  autoUpdate: boolean;
+  lastUpdateCheckAt: string | null;
+};
+
 export type BibleVerse = {
   id: string;
   book: string;
@@ -119,6 +126,7 @@ export type BrotherhoodArticle = {
 };
 
 export type AppState = {
+  settings: AppSettings;
   profile: UserProfile | null;
   battles: Battle[];
   checkIns: BattleCheckIn[];

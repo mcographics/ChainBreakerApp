@@ -1,3 +1,20 @@
+# ChainBreaker 0.0.2
+
+Settings and Android release updates.
+
+## Added
+
+- Top menu now opens Settings on every viewport.
+- Persisted app preferences for bundled Scripture translation and Red Letter Mode.
+- Daily auto-check for official ChainBreaker GitHub releases.
+- Manual `Check for update`, `Install update`, and `View releases` actions.
+- Android Browser handoff for downloading and confirming an official APK update.
+- Explicit current, available, checking, and error update states.
+
+## Release
+
+The original `0.0.1` release remains available. This release is `0.0.2` with version code `2`.
+
 # ChainBreaker 0.0.1
 
 The first public Android release of ChainBreaker.

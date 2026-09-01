@@ -1,7 +1,7 @@
 {
   "name": "chainbreaker",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@capacitor-community/sqlite": "^6.0.2",
     "@capacitor/android": "^6.2.2",
+    "@capacitor/browser": "^6.0.6",
     "@capacitor/core": "^6.2.2",
     "lucide-react": "^0.468.0",
     "react": "^19.1.1",

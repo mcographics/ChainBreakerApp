@@ -4,11 +4,11 @@ ChainBreaker is a local-first Android rule of life for men.
 
 > Break the chains. Build the man.
 
-Version `0.0.1` is the first public release of the daily loop:
+Version `0.0.2` adds private app settings and Android release updates to the first public daily loop:
 
 **Pray -> Read -> Act -> Train -> Reflect -> Repeat**
 
-## Included in 0.0.1
+## Included in 0.0.2
 
 - Home daily operating screen with KJV verse, devotion, prayer, mission, workout, battle, and reading continuation.
 - Offline KJV Bible reader using bundled public-domain Scripture from the local `scripture` folder.
@@ -18,6 +18,7 @@ Version `0.0.1` is the first public release of the daily loop:
 - Bundled Brotherhood editorial library with category filters, search, reading state, and article detail.
 - My Journey with local growth history and a reset/delete-local-data action.
 - SQLite persistence on Android with an in-memory repository for tests.
+- Settings screen opened from the top menu with Scripture preferences, Red Letter Mode, auto-update, update checks, and Android installer handoff.
 
 ## Privacy and scope
 

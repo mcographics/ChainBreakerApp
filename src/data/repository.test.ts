@@ -40,4 +40,11 @@ describe('MemoryRepository', () => {
     await repo.recordBattleCheckIn({ ...checkIn, id: 'check-2' });
     expect(await repo.listCheckIns('battle-1')).toHaveLength(1);
   });
+
+  it('persists app settings through the repository boundary', async () => {
+    const repo = new MemoryRepository();
+    const settings = { preferredTranslationId: 'kjv', redLetterMode: true, autoUpdate: false, lastUpdateCheckAt: '2026-09-01T00:00:00.000Z' };
+    await repo.saveSettings(settings);
+    expect(await repo.getSettings()).toEqual(settings);
+  });
 });

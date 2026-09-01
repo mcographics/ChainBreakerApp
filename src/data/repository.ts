@@ -1,14 +1,17 @@
 import { Capacitor } from '@capacitor/core';
 import { CapacitorSQLite, SQLiteConnection, type SQLiteDBConnection } from '@capacitor-community/sqlite';
 import { dailyEntries } from './content';
-import type { AppState, Battle, BattleCheckIn, BibleVerse, Bookmark, BrotherhoodArticle, BrotherhoodFilter, DailyEntry, Highlight, ReadingProgress, UserProfile, VerseNote, WorkoutSession } from '../types';
+import type { AppSettings, AppState, Battle, BattleCheckIn, BibleVerse, Bookmark, BrotherhoodArticle, BrotherhoodFilter, DailyEntry, Highlight, ReadingProgress, UserProfile, VerseNote, WorkoutSession } from '../types';
 
-const emptyState = (): AppState => ({ profile: null, battles: [], checkIns: [], dailyCompletions: [], readingProgress: { reference: 'John 3:16', updatedAt: new Date(0).toISOString() }, bookmarks: [], highlights: [], notes: [], workoutSessions: [], readArticleIds: [] });
+export const defaultAppSettings = (): AppSettings => ({ preferredTranslationId: 'kjv', redLetterMode: false, autoUpdate: true, lastUpdateCheckAt: null });
+const emptyState = (): AppState => ({ settings: defaultAppSettings(), profile: null, battles: [], checkIns: [], dailyCompletions: [], readingProgress: { reference: 'John 3:16', updatedAt: new Date(0).toISOString() }, bookmarks: [], highlights: [], notes: [], workoutSessions: [], readArticleIds: [] });
 const stateKey = 'chainbreaker-state-v1';
 
 export interface SyncAdapter { push(state: AppState): Promise<void>; pull(): Promise<Partial<AppState> | null>; }
 
 export interface AppRepository {
+  getSettings(): Promise<AppSettings>;
+  saveSettings(settings: AppSettings): Promise<void>;
   getProfile(): Promise<UserProfile | null>;
   saveProfile(profile: UserProfile): Promise<void>;
   listBattles(): Promise<Battle[]>;
@@ -39,6 +42,8 @@ class JsonRepository implements AppRepository {
   protected state: AppState;
   constructor(initial?: AppState) { this.state = initial ?? emptyState(); }
   protected async persist(): Promise<void> {}
+  async getSettings() { return this.state.settings; }
+  async saveSettings(settings: AppSettings) { this.state.settings = settings; await this.persist(); }
   async getProfile() { return this.state.profile; }
   async saveProfile(profile: UserProfile) { this.state.profile = profile; await this.persist(); }
   async listBattles() { return this.state.battles; }
@@ -85,6 +90,7 @@ class SqliteRepository extends JsonRepository {
     if (result.values?.[0]?.value) this.state = { ...emptyState(), ...JSON.parse(result.values[0].value as string) };
   }
   protected async persist() { await this.ready; await this.db?.run('INSERT OR REPLACE INTO app_state (key, value) VALUES (?, ?)', [stateKey, JSON.stringify(this.state)]); }
+  async getSettings() { await this.ready; return super.getSettings(); }
   async getProfile() { await this.ready; return super.getProfile(); }
   async listBattles() { await this.ready; return super.listBattles(); }
   async listCheckIns(id?: string) { await this.ready; return super.listCheckIns(id); }
